@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASS-ECMA</title>
+    <link rel="stylesheet" href="/asm/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>ASSIGNMENT</h1>
+
+        <!-- Khu vực tải tệp CSV -->
+        <div class="file-upload">
+            <label for="csvFile" class="upload-label">Tải file CSV:</label>
+            <input type="file" id="csvFile" accept=".csv">
+        </div>
+
+        <!-- Khu vực lọc dữ liệu -->
+        <div class="filter-section">
+            <h3 class="section-title">Lọc giao dịch theo các tiêu chí:</h3>
+            <div class="form-group">
+                <label for="startDate">Ngày bắt đầu:</label>
+                <input type="date" id="startDate">
+            </div>
+            <div class="form-group">
+                <label for="endDate">Ngày kết thúc:</label>
+                <input type="date" id="endDate">
+            </div>
+            <div class="form-group">
+                <label for="minAmount">Số tiền tối thiểu:</label>
+                <input type="number" id="minAmount">
+            </div>
+            <div class="form-group">
+                <label for="maxAmount">Số tiền tối đa:</label>
+                <input type="number" id="maxAmount">
+            </div>
+            <div class="form-group">
+                <label for="contentFilter">Nội dung chuyển khoản:</label>
+                <input type="text" id="contentFilter" placeholder="Tìm kiếm theo nội dung...">
+            </div>
+            <button id="filterBtn" class="btn">Lọc Giao Dịch</button>
+        </div>
+
+        <!-- Khu vực hiển thị kết quả -->
+        <div class="results-section">
+            <h3 class="section-title">Kết quả lọc:</h3>
+            <table id="resultsTable" class="styled-table">
+                <thead>
+                    <tr>
+                        <th>Ngày/giờ</th>
+                        <th>Số tiền</th>
+                        <th>Nội dung</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+
+            <div id="summary" class="summary-section">
+                <p>Tổng số tiền nhận được: <span id="totalAmount">0</span></p>
+                <p>Tổng số giao dịch nhận được:<span id="quantity">0</span></p>
+                <p>Thời gian xử lý: <span id="processingTime">0</span>ms</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+    <script src="/asm/js/script.js"></script>
+</body>
+</html>
